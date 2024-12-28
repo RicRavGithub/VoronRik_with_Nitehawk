@@ -1,0 +1,26 @@
+[include mainsail.cfg]
+
+[exclude_object]                 # added from default
+
+[bed_mesh]                       # added from default
+speed: 600
+horizontal_move_z: 2
+mesh_min: 5, 5
+mesh_max: 345, 345
+probe_count: 7, 7
+adaptive_margin: 2
+mesh_pps: 0
+# BED_MESH_CALIBRATE ADAPTIVE=1 
+
+[mcu]
+serial: /dev/serial/by-id/<your-mcu-id>
+
+[virtual_sdcard]
+path: /home/ricrav/printer_data/gcodes
+on_error_gcode: CANCEL_PRINT
+
+[printer]
+kinematics: none
+max_velocity: 1000
+max_accel: 1000
+[include moonraker_obico_macros.cfg]
